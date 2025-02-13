@@ -6,7 +6,7 @@
 #    By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 13:59:47 by adapassa          #+#    #+#              #
-#    Updated: 2025/02/13 11:39:13 by adapassa         ###   ########.fr        #
+#    Updated: 2025/02/13 12:59:47 by adapassa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ $(NAME): $(SRCS)
 			$(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
-			rm -rf $(NAME)
+			@rm -rf $(NAME)
 
 fclean:		clean
 

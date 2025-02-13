@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:16:12 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/13 12:07:06 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:04:10 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 
 int main()
 {
-    // initialize the phonebook class
-    PhoneBook PhoneBook;
-
-    // initialize variables
-    str line;
-    std::cout << "Hello ! Welcome to your new contact manager.\n";
-    // main program loop
-    while (1)
-    {
-        std::cout << "Type ADD, SEARCH or EXIT : ";
-        std::getline(std::cin, line);
-        if (!line.compare(add))
-            PhoneBook.add_contact();
-        else if (!line.compare(search))
-            PhoneBook.search_contact();
-        else if (!line.compare(exit))
-        {
-            std::cout << "Goodbye !";
-            break ;
-        }
-    }
-    std::cout << std::endl;
-    return 0;
+	// initialize the phonebook class
+	PhoneBook	PhoneBook;
+	str			line;
+	// main program loop
+	while (1)
+	{
+		std::cout << "Type ADD, SEARCH or EXIT : ";
+		std::getline(std::cin, line);
+		if (!line.compare(add))
+			PhoneBook.add_contact();
+		else if (!line.compare(search))
+			PhoneBook.search_contact();
+		else if (!line.compare(exit))
+		{
+			std::cout << "Goodbye !";
+			break ;
+		}
+	}
+	std::cout << std::endl;
+	return 0;
 }

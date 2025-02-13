@@ -6,13 +6,13 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:13:41 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/13 12:14:53 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:02:01 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
-PhoneBook::PhoneBook() : max_contacts(8), current_nb(0), nb_contacts(0) {
+PhoneBook::PhoneBook() : current_nb(0), nb_contacts(0) {
 }
 
 PhoneBook::~PhoneBook() {
@@ -25,25 +25,18 @@ void	PhoneBook::add_contact() {
 	str	phone;
 	str	secret;
 
-	system("clear");
 	if (this->current_nb == 8)
 		this->current_nb = 0;
-	system("clear");
 	std::cout << "Type a name : ";
 	std::getline(std::cin, name);
-	system("clear");
 	std::cout << "Type a surname : ";
 	std::getline(std::cin, last);
-	system("clear");
 	std::cout << "Type a nickname : ";
 	std::getline(std::cin, nick);
-	system("clear");
 	std::cout << "Type a phone-number : ";
 	std::getline(std::cin, phone);
-	system("clear");
 	std::cout << "Type a dark secret : ";
 	std::getline(std::cin, secret);
-	system("clear");
 	this->array[this->current_nb].setLast(last);
 	this->array[this->current_nb].setNick(nick);
 	this->array[this->current_nb].setPhone(phone);
@@ -64,7 +57,6 @@ void	PhoneBook::search_contact() {
 	str	ret;
 	int	index;
 	
-	system("clear");
 	if (this->current_nb == 0) {
 		std::cout << "No contact avalaible ! Abort..." << std::endl; sleep(1); return;
 	}
@@ -104,7 +96,4 @@ void	PhoneBook::search_contact() {
 	std::cout << "Nickname : " << this->array[index].getNick() << std::endl;
 	std::cout << "Phone number : " << this->array[index].getPhone() << std::endl;
 	std::cout << "Darkest secret : " << this->array[index].getSecret() << std::endl;
-	std::cout << std::endl << "Press a key to continue..." << std::endl;
-	getchar();
-	getchar();
 }

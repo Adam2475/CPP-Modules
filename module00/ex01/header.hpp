@@ -50,7 +50,6 @@ class	PhoneBook {
 		void	search_contact();
 		
 	private:
-		const	int	max_contacts;
 		int			current_nb;
 		int			nb_contacts;
 		Contact		array[8];
