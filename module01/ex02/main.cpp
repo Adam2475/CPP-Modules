@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:15:12 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/19 12:34:06 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/19 15:07:43 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int main()
 								// es: holds the reference of the value of holder
 	
 	std::cout << "string's address :" << &holder << std::endl; // print the address
-	std::cout << "string's ptr adress : " << stringPTR << std::endl;
+	std::cout << "string's ptr adress : " << &stringPTR << std::endl;
+	//std::cout << "string's ptr adress without end: " << stringPTR << std::endl;
 	std::cout << "string's ref adress : " << &stringREF << std::endl;
 
 	std::cout << "string's value : " << holder << std::endl;
