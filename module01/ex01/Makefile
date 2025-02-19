@@ -5,23 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/06 13:59:47 by adapassa          #+#    #+#              #
-#    Updated: 2025/02/19 09:52:39 by adapassa         ###   ########.fr        #
+#    Created: 2025/02/19 10:53:51 by adapassa          #+#    #+#              #
+#    Updated: 2025/02/19 11:10:47 by adapassa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = megaphone.cpp
 FLAGS = c++ -Wall -Wextra -Werror -std=c++98
-NAME = megaphone
+NAME = horde
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
-all: $(NAME)
+all:$(NAME)
 
-$(NAME): $(SRCS)
-			$(FLAGS) $(SRCS) -o $(NAME)
+$(NAME) : $(SRCS)
+		$(FLAGS) $(SRCS) -o $(NAME)
 
-clean:
-			@rm -rf $(NAME)
+clean: 
+		rm -rf $(NAME)
 
-fclean:		clean
+fclean: clean
 
-re:			fclean all
+re: fclean all

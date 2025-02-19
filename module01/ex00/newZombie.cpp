@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:45:08 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/19 09:53:52 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/19 10:13:06 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/19 10:24:48 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
+// this function creates a zombie on the heap and returns a pointer to it.
+Zombie* newZombie(str name)
 {
-	int i = 1;
-	int j = 0;
-
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-	else
-	{
-		while (av[i])
-		{
-			while (av[i][j] != '\0')
-			{
-				std::cout << (char)std::toupper(av[i][j]);
-				// without the cast it gives back int
-				j++;
-			}
-			j=0;
-			i++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+    return new Zombie(name);
 }
