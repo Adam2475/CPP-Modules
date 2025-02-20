@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:51:57 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/19 15:53:29 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:52:22 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 
 class HumanA
 {
-    private:
-        str name;
-        Weapon &weapon;
-    public:
-        HumanA(str name, Weapon &weapon);
-        ~HumanA();
-        // Methods
-        void attack();
+	private:
+		str name;
+		Weapon &weapon;
+	public:
+		// Constructors
+		HumanA(str name, Weapon &weapon);
+		~HumanA();
+		// Methods
+		void attack();
 };
 
 #endif
