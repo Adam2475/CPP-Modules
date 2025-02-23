@@ -1,16 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/23 14:54:38 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/23 14:56:52 by adapassa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
 
 typedef std::string str;
 
-void	getNewLine(str &line, str first, str second) {
+// replaces all occurrence of fi
+void	getNewLine(str &line, str string1, str string2)
+{
 	size_t	startPos = 0;
 
-	while ((startPos = line.find(first, startPos)) != str::npos) {
-		line = line.substr(0, startPos) + second + line.substr(startPos + first.length());
-		startPos += second.length();
+	while ((startPos = line.find(string1, startPos)) != str::npos)
+	{
+		line = line.substr(0, startPos) + string2 + line.substr(startPos + string1.length());
+		startPos += string2.length();
 	}
 }
 
@@ -20,17 +34,19 @@ int	main(int ac, char **av) {
 	}
 	
 	str				in_file = av[1];
-	str				first = av[2];
-	str				second = av[3];
+	str				string1 = av[2];
+	str				string2 = av[3];
 	str				line;
 	str				out_file = in_file + ".replace";
 
 	std::ifstream	input(in_file.c_str());
 	std::ofstream	output(out_file.c_str());
 	
-	if (input.is_open()) {
-		while (std::getline(input, line)) {
-			getNewLine(line, first, second);
+	if (input.is_open())
+	{
+		while (std::getline(input, line))
+		{
+			getNewLine(line, string1, string2);
 			output << line;
 			if (!input.eof())
 				output << std::endl;
