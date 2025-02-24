@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 15:49:46 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 12:31:48 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/24 12:36:54 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/24 14:54:06 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _SCAVTRAP_HPP_
-#define _SCAVTRAP_HPP_
+#include "Animal.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap {
+class Cat : public Animal // what's the difference here?
+{
 	public:
-		ScavTrap(str name);
-		ScavTrap(ScavTrap const &src);
-		~ScavTrap();
-
-		ScavTrap & operator=(ScavTrap const &rSym); //
-		
-		void	attack(const str &target);
-		void	guardGate() const;
+		Cat();
+		Cat(Cat const &src);
+		~Cat();
+		Cat &operator=(Cat const &rSym);
+		// Member functions
+		void makeSound() const;
 	private:
-};
-
-#endif
+		str _type;
+}

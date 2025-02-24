@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 15:49:46 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 12:31:48 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/24 14:54:37 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/24 14:54:38 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _SCAVTRAP_HPP_
-#define _SCAVTRAP_HPP_
+#include "Animal.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap {
+class Dog : public Animal {
 	public:
-		ScavTrap(str name);
-		ScavTrap(ScavTrap const &src);
-		~ScavTrap();
+		Dog();
+		Dog(Dog const &src);
+		~Dog();
 
-		ScavTrap & operator=(ScavTrap const &rSym); //
-		
-		void	attack(const str &target);
-		void	guardGate() const;
+		Dog &	operator=(Dog const &rSym);
+
+		void	makeSound() const;
 	private:
+		str		_type;
 };
-
-#endif

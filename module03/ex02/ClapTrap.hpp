@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:44:16 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 15:44:17 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:50:03 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ typedef std::string str;
 class ClapTrap {
 	public:
 		ClapTrap(str name);
-		ClapTrap(ClapTrap const &src);
+		ClapTrap(ClapTrap const &src); // initializes basing on an existing object
 		~ClapTrap();
+		ClapTrap &operator=(ClapTrap const &rSym); // A copy assignment operator overload.
+		// copies all values of one object into another object
 
-		ClapTrap &	operator=(ClapTrap const &rSym);
 
+		
 		int		getHitPoints() const;
 		int		getEnergyPoints() const;
 		int		getAttackDamage() const;
