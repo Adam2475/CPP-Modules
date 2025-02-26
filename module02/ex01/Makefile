@@ -1,18 +1,13 @@
-SRC= $(wildcard *.cpp)
-NAME= canon
-OBJ= $(SRC:.cpp=.o)
+SRC = *.cpp
+NAME = canon
+FLAGS = c++ -Wall -Wextra -Werror -std=c++98 -pedantic
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
+$(NAME): $(SRC)
+		$(FLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ)
-
-fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+fclean: clean
 
-.PHONY: all clean fclean re
+re: fclean all

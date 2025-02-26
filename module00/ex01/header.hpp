@@ -6,13 +6,16 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 09:57:30 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 14:55:42 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/26 09:28:58 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
+#ifndef HEADER_H // Prevent multiple inclusions of the same header file during compilation
 # define HEADER_H
 
+//////////////////////
+// Standard libraries
+//////////////////////
 # include <iostream>
 # include <cctype>
 # include <string>

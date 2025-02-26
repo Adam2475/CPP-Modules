@@ -6,12 +6,16 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:30:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 14:55:42 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:51:26 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <math.h>
+
+//////////////////////////////////
+// Constructors Implementation
+//////////////////////////////////
 
 Fixed::Fixed() : value(0) {}
 

@@ -6,12 +6,16 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:30:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 14:55:42 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:53:00 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <math.h>
+
+//////////////////////////////////
+// Constructors Implementation
+//////////////////////////////////
 
 Fixed::Fixed() : value(0) {
 	std::cout << "Default constructor called" << std::endl;
@@ -43,6 +47,10 @@ Fixed&	Fixed::operator=(Fixed const &rSym) {
 	return *this;
 }
 
+//////////////////////////////////
+// Getters & Setters
+//////////////////////////////////
+
 int		Fixed::getRawBits() const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->value;
@@ -52,6 +60,10 @@ void	Fixed::setRawBits(int const raw) {
 	this->value = raw;
 }
 
+//////////////////////////////////
+// Methods Implementation
+//////////////////////////////////
+
 float	Fixed::toFloat() const {
 	return (float)this->value / (float)(1 << bits);
 }
@@ -59,6 +71,10 @@ float	Fixed::toFloat() const {
 int		Fixed::toInt() const {
 	return this->value >> bits;
 }
+
+///////////////////////////////////////
+// Stream Insertion Operator Overload
+///////////////////////////////////////
 
 std::ostream&	operator<<(std::ostream& o, Fixed const &rSym) {
 	o << rSym.toFloat();

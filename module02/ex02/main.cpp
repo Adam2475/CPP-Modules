@@ -6,25 +6,22 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:30:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 14:55:42 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/26 12:01:11 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-SRC= $(wildcard *.cpp)
-NAME= canon
-OBJ= $(SRC:.cpp=.o)
+#include "Fixed.hpp"
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
-
-clean:
-	rm -rf $(OBJ)
-
-fclean: clean
-	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+int main( void )
+{
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return (0);
+}

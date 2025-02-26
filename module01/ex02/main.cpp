@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:15:12 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 14:55:42 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/26 09:48:28 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 // typedef std::string str;
 
 // just another syntax for address manipulation
+
+///////////////////////////////////////////////////////////////////////////////////
+// a pointer is a type of variable that stores a link to another object
+// they allow to reference the same object without copying it
+//..
+// when we dereference a pointer we look at what's in the address pointed by it
+////////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
