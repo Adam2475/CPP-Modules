@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:27:38 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 14:52:20 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:26:12 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Animal
 		// Member functions
 		virtual void makeSound() const; // virtual function can be overwritten by child class
 	protected: // it can be accessed in derived classes but not directly outside
-		str _type;
-}
+		str type;
+};
 
 /*Since Animal only contains a std::string, 
 a default assignment operator would work fine, 

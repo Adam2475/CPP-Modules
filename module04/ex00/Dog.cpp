@@ -6,18 +6,18 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:07:29 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 15:07:30 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:26:04 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Dog.hpp"
+#include "Dog.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & operators                          */
 /* -------------------------------------------------------------------------- */
 
 Dog::Dog() : Animal::Animal("DOG") {
-	this->_type = Animal::getType();
+	this->_type = Animal::get_type();
 	std::cout << "[C] A new dog appear !" << std::endl;
 }
 

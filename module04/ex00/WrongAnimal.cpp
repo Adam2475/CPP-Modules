@@ -6,11 +6,11 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:07:09 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 15:07:10 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:25:44 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
+#include "WrongAnimal.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & operators                          */

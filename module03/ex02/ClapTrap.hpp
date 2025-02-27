@@ -6,10 +6,12 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:44:16 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 12:50:03 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:46:52 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/// @brief : header protection
+#pragma once
 
 #ifndef _CLAPTRAP_HPP_
 #define _CLAPTRAP_HPP_
@@ -20,16 +22,21 @@
 
 typedef std::string str;
 
-class ClapTrap {
+class ClapTrap
+{
 	public:
-		ClapTrap(str name);
-		ClapTrap(ClapTrap const &src); // initializes basing on an existing object
-		~ClapTrap();
-		ClapTrap &operator=(ClapTrap const &rSym); // A copy assignment operator overload.
-		// copies all values of one object into another object
+		ClapTrap();				// Default constructor
+		ClapTrap(str name);		// Costructor overload (name)
+		ClapTrap(ClapTrap const &src);	// Copy constructor
+		ClapTrap &operator=(ClapTrap const &rSym); // Assignement overload
+		~ClapTrap();			// Default destructor
 
-
-		
+		/// @brief : new getter and setter for name
+		str		getName() const;
+		void	setName(str name);
+		///////////////////////
+		// Getters & Setters //
+		///////////////////////
 		int		getHitPoints() const;
 		int		getEnergyPoints() const;
 		int		getAttackDamage() const;
@@ -37,11 +44,19 @@ class ClapTrap {
 		void	setEnergyPoints(int energyPoints);
 		void	setAttackDamage(int attackDamage);
 
+		
+		//////////////////////
+		// Member Functions //
+		//////////////////////
 		void	attack(const str &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		/// @note : need virtual function to modify it in child classes
+		//			without redefining.
 	
-	private:
+	/// @note with private keyword 
+	//private: 
+	protected:
 		str	name;
 		int	hitPoints;
 		int	energyPoints;

@@ -6,28 +6,34 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:44:16 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 15:44:17 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:13:55 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef _CLAPTRAP_HPP_
-#define _CLAPTRAP_HPP_
+# define _CLAPTRAP_HPP_
 
-#include <iostream>
-#include <string>
-#include <iomanip>
+# include <iostream>
+# include <string>
+# include <iomanip>
 
 typedef std::string str;
 
-class ClapTrap {
+/////////////////////////
+// Classes Declaration //
+/////////////////////////
+class ClapTrap
+{
 	public:
-		ClapTrap(str name);
-		ClapTrap(ClapTrap const &src);
-		~ClapTrap();
+		ClapTrap(str name);					// Default Constructor
+		ClapTrap(ClapTrap const &src);		// Copy Constructor
+		ClapTrap &operator=(ClapTrap const &ptref); // Assignement Overload
+		~ClapTrap();						// Default Destructor
 
-		ClapTrap &	operator=(ClapTrap const &rSym);
-
+		///////////////////////
+		// Getters & Setters //
+		///////////////////////
 		int		getHitPoints() const;
 		int		getEnergyPoints() const;
 		int		getAttackDamage() const;
@@ -35,6 +41,9 @@ class ClapTrap {
 		void	setEnergyPoints(int energyPoints);
 		void	setAttackDamage(int attackDamage);
 
+		//////////////////////
+		// Member Functions //
+		//////////////////////
 		void	attack(const str &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);

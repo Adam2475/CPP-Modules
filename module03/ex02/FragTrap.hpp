@@ -5,41 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 15:52:46 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/23 16:05:19 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/27 17:00:26 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/27 17:19:25 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
-public:
-  /**
-   * @brief Default constructor.
-   */
-  explicit FragTrap(const std::string &Name);
-  /**
-   * @brief Copy constructor.
-   * @param other The other FragTrap to copy.
-   */
-  FragTrap(const FragTrap &other);
-  /**
-   * @brief Copy assignment operator.
-   * @param other The other FragTrap to assign.
-   * @return A reference to the assigned FragTrap.
-   */
-  FragTrap &operator=(const FragTrap &other);
-  /**
-   * @brief Destructor.
-   */
-  ~FragTrap();
-  /**
-   * @brie Positive high fives request on std out.
-   */
-  void highFivesGuys();
+class FragTrap : public ClapTrap
+{
+	public:
+		FragTrap(str name);
+		FragTrap(FragTrap const &src);
+		FragTrap &operator=(FragTrap const &ptref);
+		~FragTrap();
+		// Member Function
+		void	attack(const str &target);
+		void	highFivesGuys(void);
+	private:
 };
 
-#endif // EX02_FRAGTRAP_HPP
+#endif

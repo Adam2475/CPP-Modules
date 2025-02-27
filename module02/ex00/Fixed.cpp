@@ -6,15 +6,15 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:39:45 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/26 10:20:48 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:50:26 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//////////////////////////////////
-// Constructors Implementation
-//////////////////////////////////
+/////////////////////////////////
+// Constructors Implementation //
+/////////////////////////////////
 
 /// @brief Purpose: Initializes a Fixed object with value = 0.
 /// @note Syntax: " : value(0) " = Member Initialization List: set value when created

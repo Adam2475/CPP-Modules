@@ -6,16 +6,16 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:52:30 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 15:07:52 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:26:22 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-#include "../include/Cat.hpp"
+#include "Cat.hpp"
 
 Cat::Cat() : Animal::Animal("CAT") {
-	this->_type = Animal::getType();
+	this->_type = Animal::get_type();
 	std::cout << "[C] A new Cat quietly approaches.." << std::endl;
 }
 

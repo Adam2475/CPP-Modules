@@ -6,11 +6,11 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:57:23 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/24 14:57:28 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:25:35 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongCat.hpp"
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal::WrongAnimal("WRONGCAT") {
 	this->_type = WrongAnimal::getType();
