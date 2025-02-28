@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:38:39 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/28 11:28:47 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:54:44 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Animal
 	/// @note: for each attribute we need getters and setters.
 		const str getType();
 		void setType(str type);
+		// Member Functions
+		virtual void makeSound(); 
 	protected:
 		str type;
 };

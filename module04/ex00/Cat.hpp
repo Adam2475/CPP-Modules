@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 14:57:02 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/27 12:38:45 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/28 12:43:19 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/28 12:53:18 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#pragma once
 
-class WrongCat : public WrongAnimal {
+#include <string>
+#include <iostream>
+#include <iomanip>
+
+class Cat : public Animal
+{
 	public:
-		WrongCat();
-		WrongCat(WrongCat const &src);
-		~WrongCat();
-
-		WrongCat &	operator=(WrongCat const &rSym);
-
-		void	makeSound() const;
+		
+		
 	private:
-		str		_type;
-};
+}

@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:49:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/28 11:29:06 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:53:52 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,9 @@ Animal &Animal::operator=(const Animal &ptref)
 	if (this != &ptref)
 		this->type = ptref.type;
 	return (*this);
+}
+
+void	Animal::makeSound()
+{
+	
 }
