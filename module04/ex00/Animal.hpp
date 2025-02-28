@@ -5,12 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:27:38 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/27 12:26:12 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/28 10:38:39 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/28 11:28:47 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
+#pragma once
+
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 typedef std::string str;
@@ -18,21 +24,16 @@ typedef std::string str;
 class Animal
 {
 	public:
-		Animal(); // Default constructor
-		Animal(str type); // Another costructor with given type
-		Animal(Animal const &src); // Copy constructor
-		~Animal(); // Default destructor
-		Animal &operator=(Animal const &rSYm); // Assignment operator overload
-		// Getter & Setter
-		str get_type() const;
-		void set_type();
-		// Member functions
-		virtual void makeSound() const; // virtual function can be overwritten by child class
-	protected: // it can be accessed in derived classes but not directly outside
+		Animal();
+		Animal(str type);
+		Animal(const Animal &src);
+		Animal &operator=(Animal const &ptref);
+		~Animal();
+	/// @note: for each attribute we need getters and setters.
+		const str getType();
+		void setType(str type);
+	protected:
 		str type;
 };
 
-/*Since Animal only contains a std::string, 
-a default assignment operator would work fine, 
-but if type were a dynamically allocated char*, 
-a custom assignment operator would be necessary.*/
+#endif

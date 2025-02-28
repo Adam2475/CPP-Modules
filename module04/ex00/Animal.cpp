@@ -5,52 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 15:08:01 by adapassa          #+#    #+#             */
-/*   Updated: 2025/02/27 12:18:19 by adapassa         ###   ########.fr       */
+/*   Created: 2025/02/28 10:49:52 by adapassa          #+#    #+#             */
+/*   Updated: 2025/02/28 11:29:06 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-/* -------------------------------------------------------------------------- */
-/*                          Constructors & operators                          */
-/* -------------------------------------------------------------------------- */
+////////////////////////////////
+// Constructors Implementation
+////////////////////////////////
 
-Animal::Animal(str type) : _type(type) {
-	std::cout << "[C] Animal base constructor called for type : " << this->_type << "." << std::endl;
+Animal::Animal()
+{
+	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal() : _type("UNKNOWN") {
-	std::cout << "[C] Animal default constructor called." << std::endl;
+/// @brief : injects parameters into the constructor
+Animal::Animal(str type) : type(type)
+{
+	std::cout << "Parameterized constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &src) {
+Animal::Animal(const Animal &src)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	/// @brief : Calls assignement operator
+	//			on the dereferenced implicit (this) pointer.
 	*this = src;
 }
 
-Animal &	Animal::operator=(Animal const &rSym) {
-	if (this != &rSym) {
-		this->_type = rSym._type;
-	}
-	return *this;
+Animal::~Animal()
+{
+	std::cout << "Called Animal Destructor!" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "[D] Default destructor called for type : " << this->_type << "." << std::endl; 
+////////////////////////
+// Getters & Setters
+///////////////////////
+
+const str Animal::getType()
+{
+	return (this->type);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              Geteurs & seteurs                             */
-/* -------------------------------------------------------------------------- */
-
-str	Animal::getType() const {
-	return this->_type;
+void Animal::setType(str type)
+{
+	this->type = type;
 }
 
-/* ------------	-------------------------------------------------------------- */
-/*                              Members functions                             */
-/* -------------------------------------------------------------------------- */
+///////////////////////
+// Member Functions
+///////////////////////
 
-void	Animal::makeSound() const {
-	std::cout << "[Unknown Animal] Grrr..." << std::endl;
+/// @brief : overloads the assignement operator
+Animal &Animal::operator=(const Animal &ptref)
+{
+	std::cout << "Assignement overload called" << std::endl;
+	if (this != &ptref)
+		this->type = ptref.type;
+	return (*this);
 }
