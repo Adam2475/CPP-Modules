@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 12:43:19 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 13:54:33 by adapassa         ###   ########.fr       */
+/*   Created: 2025/03/01 13:09:17 by adapassa          #+#    #+#             */
+/*   Updated: 2025/03/01 13:11:10 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "WrongAnimal.hpp"
 
-#include "Animal.hpp"
-
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
-		Cat();
-		Cat(const Cat &src);
-		~Cat();
+		WrongCat();
+		WrongCat(const WrongCat& other);
+		~WrongCat();
 
-		Cat &operator=(const Cat &src);
+		WrongCat& operator=(const WrongCat& other);
 
-		void makeSound() const;
+		void makeSound() const;  // This won't be called polymorphically
 };
 
 #endif

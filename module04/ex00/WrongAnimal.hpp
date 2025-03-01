@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:38:39 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 16:06:33 by adapassa         ###   ########.fr       */
+/*   Created: 2025/03/01 13:07:58 by adapassa          #+#    #+#             */
+/*   Updated: 2025/03/01 13:10:48 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
-#include <iomanip>
 #include <string>
 
-typedef std::string str;
-
-class Animal
+class WrongAnimal
 {
 	protected:
-		str type;
+		std::string type;
+
 	public:
-		Animal();
-		Animal(str type);
-		Animal(Animal const &src);
-		Animal &operator=(Animal const &ptref);
-		virtual ~Animal();
-	/// @note: for each attribute we need getters and setters.
-		str getType() const;
-		void setType(str type);
-		// Member Functions
-		virtual void makeSound() const ; 
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal& other);
+		~WrongAnimal();
+
+		WrongAnimal &operator=(const WrongAnimal &other);
+
+		std::string getType() const;
+		void makeSound() const;  // Not virtual!
 };
 
 #endif

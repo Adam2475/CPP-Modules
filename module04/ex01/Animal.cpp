@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:49:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 13:56:21 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/03/01 16:19:36 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 // Constructors Implementation
 ////////////////////////////////
 
-Animal::Animal() : type("Unknown")
+// if not always initialized it SEGFAULTS when deleted
+Animal::Animal() : type("Unknown"), brain(NULL)
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
@@ -25,6 +26,8 @@ Animal::Animal() : type("Unknown")
 Animal::Animal(str type) : type(type)
 {
 	std::cout << "Parameterized constructor called" << std::endl;
+	this->brain = new Brain();
+	std::cout << "Animal brain initialized" << std::endl;
 }
 
 Animal::Animal(const Animal &src)
@@ -38,6 +41,7 @@ Animal::Animal(const Animal &src)
 Animal::~Animal()
 {
 	std::cout << "Called Animal Destructor!" << std::endl;
+	delete brain;
 }
 
 ////////////////////////
@@ -63,7 +67,11 @@ Animal &Animal::operator=(const Animal &ptref)
 {
 	std::cout << "Assignement overload called" << std::endl;
 	if (this != &ptref)
+	{
 		this->type = ptref.type;
+		delete brain;
+		brain = new Brain(*ptref.brain);
+	}
 	return (*this);
 }
 

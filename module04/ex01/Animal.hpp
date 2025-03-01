@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:38:39 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 16:06:33 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/03/01 16:11:48 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 #include <iomanip>
 #include <string>
 
+#include "Brain.hpp"
+
 typedef std::string str;
 
 class Animal
 {
 	protected:
 		str type;
+		Brain *brain; // a pointer to the animal brain (REQUIRED!!)
 	public:
 		Animal();
 		Animal(str type);

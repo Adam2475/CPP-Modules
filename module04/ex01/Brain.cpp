@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 12:43:19 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 13:54:33 by adapassa         ###   ########.fr       */
+/*   Created: 2025/03/01 15:52:36 by adapassa          #+#    #+#             */
+/*   Updated: 2025/03/01 16:17:04 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Brain.hpp"
 
-#ifndef CAT_HPP
-# define CAT_HPP
-
-#include "Animal.hpp"
-
-class Cat : public Animal
+Brain::Brain()
 {
-	public:
-		Cat();
-		Cat(const Cat &src);
-		~Cat();
+	std::cout << "Brain constructor called" << std::endl;
+}
 
-		Cat &operator=(const Cat &src);
+Brain::Brain(const Brain &src) 
+{
+	*this = src;
+}
 
-		void makeSound() const;
-};
+Brain::~Brain()
+{
+	std::cout << "Brain destructor called" << std::endl;
+}
 
-#endif
+Brain &Brain::operator=(const Brain &other)
+{
+	if (this == &other)
+		return (*this);
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = other.ideas[i];
+	return (*this);
+}
