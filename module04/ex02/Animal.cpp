@@ -6,7 +6,7 @@
 /*   By: adapassa <adapassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:49:52 by adapassa          #+#    #+#             */
-/*   Updated: 2025/03/01 16:20:47 by adapassa         ###   ########.fr       */
+/*   Updated: 2025/03/01 16:26:36 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,14 @@ Animal &Animal::operator=(const Animal &ptref)
 	return (*this);
 }
 
-void Animal::makeSound() const
-{
-	std::cout << "Some generic animal sound!" << std::endl;
-}
+/**
+* @note : made makeSound() virtual so the Animal class can become abstract
+*/
+
+// void Animal::makeSound() const
+// {
+// 	std::cout << "Some generic animal sound!" << std::endl;
+// }
 
 /// @brief : animal is declared virtual to not be implemented as default
 //			but only redefined.
