@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Serializer
-SRC = ./src/Serializer.cpp ./src/main.cpp
+NAME = Base
+SRC = ./src/Base.cpp ./src/Generate.cpp ./src/Identify.cpp ./src/main.cpp
 
 all: $(NAME)
 

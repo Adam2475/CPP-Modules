@@ -11,8 +11,27 @@
 /* ************************************************************************** */
 
 #include "../inc/Serializer.hpp"
+#include <iostream>
 
-int main()
-{
-	return 0;
+int main() {
+    Data original;
+    original.id = 42;
+    original.name = "Example";
+    original.value = 3.14;
+
+    std::cout << "Original pointer : " << &original << std::endl;
+    std::cout << "Original values  : " << original.id << ", " << original.name << ", " << original.value << std::endl;
+
+    uintptr_t raw = Serializer::serialize(&original);
+    Data* copy = Serializer::deserialize(raw);
+
+    std::cout << "Deserialized pointer : " << copy << std::endl;
+    std::cout << "Deserialized values  : " << copy->id << ", " << copy->name << ", " << copy->value << std::endl;
+
+    // if (copy == &original)
+    //     std::cout << "Pointers match: Serialization/Deserialization successful" << std::endl;
+    // else
+    //     std::cout << "Pointers do not match!" << std::endl;
+
+    return 0;
 }

@@ -1,7 +1,9 @@
+NAME = whatever
+
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Serializer
-SRC = ./src/Serializer.cpp ./src/main.cpp
+
+SRC = ./src/main.cpp
 
 all: $(NAME)
 
