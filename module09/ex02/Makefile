@@ -3,7 +3,7 @@ NAME = PmergeMe
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ./src/main.cpp
+SRC = ./src/main.cpp ./src/PmergeMe.cpp
 
 all: $(NAME)
 
@@ -15,4 +15,4 @@ clean:
 
 fclean: clean
 
-re: fclean alls
+re: fclean all

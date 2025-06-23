@@ -15,4 +15,4 @@ clean:
 
 fclean: clean
 
-re: fclean alls
+re: fclean all
