@@ -1,23 +1,12 @@
 #include "../inc/PmergeMe.hpp"
-// c++ 11
-// #include <array>
-
-// Forward declarations
-// template <typename T>
-// void printContainer(T& container);
+#include <sys/time.h>
+#include <time.h>
 
 // Ford-Johnson algorythm
 // this is a hybrid of merge-sort and insertion sort that:
 // - pairs elements and sorts pairs recursively
 // - inserts the smaller elements into the sorted list using
 //      binary insertion.
-
-// template <typename T>
-// void printContainer(const T& container) {
-//     std::cout << "identified type: unknown" << std::endl;
-//     for (size_t i = 0; i < container.size(); ++i)
-//         std::cout << container[i] << (i + 1 < container.size() ? " " : "\n");
-// }
 
 bool isPositiveNumber(const char* str)
 {
@@ -39,7 +28,6 @@ bool isValidInt(char **av, int ac)
 
         if (val > INT_MAX || val < 0)
             return false;
-        // std::cout << INT_MAX << std::endl;
     }
     return true;
 }
@@ -65,12 +53,37 @@ int main(int ac, char **av)
         return 1;
     }
     PmergeMe holder = PmergeMe(av, ac);
+    std::cout << "not sorted: " << std::endl;
+    std::cout << "--------------------" << std::endl;
     printContainer(holder.vec);
-    holder.sortVector(holder.vec);
     printContainer(holder.dec);
+    std::cout << "sorted: " << std::endl;
+    std::cout << "--------------------" << std::endl;
+
+    std::clock_t startVec, endVec, startDeq, endDeq;
+
+    // Sorting vector
+    startVec = clock();
+    holder.sortVector(holder.vec);
+    endVec = clock();
+
+    // Sorting deque
+    startDeq = clock();
+    holder.sortDeque(holder.dec);
+    endDeq = clock();
+
+    // Calculate elapsed time in microseconds
+    double vecTime = ((double) (endVec - startVec)) / CLOCKS_PER_SEC * 1000;
+    double deqTime = ((double) (endDeq - startDeq)) / CLOCKS_PER_SEC * 1000;
 
     // the container should be sorted
+    printContainer(holder.dec);
     printContainer(holder.vec);
+
+    std::cout << std::fixed << std::setprecision(5);
+    std::cout << "Time to process a range of " << holder.vec.size() << " elements with std::vector : " << vecTime << " ms" << std::endl;
+    std::cout << "Time to process a range of " << holder.dec.size() << " elements with std::deque  : " << deqTime << " ms" << std::endl;
+
 
     // std::vector<int> vec;
     // fillContainer(vec, av[1]);
