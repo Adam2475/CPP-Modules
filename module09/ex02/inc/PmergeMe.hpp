@@ -63,6 +63,16 @@ inline void printContainer(const std::deque<int>& container)
 // Sorting Template
 //////////////////////////////
 
+// Binary search:
+// is a searching algoryth used in a sorted array
+// reduces time complexity by splitting a container
+
+// - divide the search space into 2 halves
+// - compare the middle element of search space with the key
+// - if key is found at middle element the process terminate
+// - else you chose which half will be used as next search space
+//     - if key is smaller you use the left side
+
 template <typename T>
 void binaryInsert(T& container, int value, size_t start, size_t end)
 {
@@ -71,7 +81,9 @@ void binaryInsert(T& container, int value, size_t start, size_t end)
 
     while (left < right)
     {
+        // find the middle of the container
         size_t mid = (left + right) / 2;
+        // chose which half of the container to search in
         if (container[mid] < value)
             left = mid + 1;
         else
@@ -80,12 +92,18 @@ void binaryInsert(T& container, int value, size_t start, size_t end)
     container.insert(container.begin() + left, value);
 }
 
+// - pair up elements
+// - separate the largest and lowest values of the pairs
+// (if elements are odd are putted into smaller)
+
 template <typename T>
 void fordJohnsonSort(T& container, size_t start, size_t end)
 {
+    // number of elements
     size_t n = end - start;
     if (n <= 1)
         return;
+    // if only 2 elements are present swap them if not sorted
     if (n == 2)
     {
         if (container[start] > container[start + 1])
@@ -93,8 +111,10 @@ void fordJohnsonSort(T& container, size_t start, size_t end)
         return;
     }
 
+    // tmp, stores the smaller and larger value of the pairs
     T smaller, larger;
 
+    // divide in pairs the container
     for (size_t i = start; i + 1 < end; i += 2)
     {
         if (container[i] < container[i + 1])
@@ -109,8 +129,12 @@ void fordJohnsonSort(T& container, size_t start, size_t end)
         }
     }
 
+    // check for odd elements
     if (n % 2 != 0)
         smaller.push_back(container[end - 1]);
+
+    // std::cout << "ciao" << std::endl;
+    // printContainer(smaller);
 
     fordJohnsonSort(smaller, 0, smaller.size());
 
@@ -118,6 +142,7 @@ void fordJohnsonSort(T& container, size_t start, size_t end)
     container.erase(container.begin() + start, container.begin() + end);
     container.insert(container.begin() + start, smaller.begin(), smaller.end());
 
+    // insert the larger values by binary insertion
     for (size_t i = 0; i < larger.size(); ++i)
     {
         binaryInsert(container, larger[i], start, start + smaller.size() + i);

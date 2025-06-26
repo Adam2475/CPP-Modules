@@ -72,7 +72,6 @@ int main(int ac, char **av)
     holder.sortDeque(holder.dec);
     endDeq = clock();
 
-    // Calculate elapsed time in microseconds
     double vecTime = ((double) (endVec - startVec)) / CLOCKS_PER_SEC * 1000;
     double deqTime = ((double) (endDeq - startDeq)) / CLOCKS_PER_SEC * 1000;
 
